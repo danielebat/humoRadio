@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <title>HumoRadio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <style>
+            body{
+                background-image: url("def.png");
+                background-repeat: no-repeat;
+                min-height: 570px;
+                min-width: 1350px;
+            }
+
+            #first{
+                text-align: center;
+                font-family: Georgia;
+                font-style: italic;
+                color: white;
+                background-color: transparent;
+                margin: 0px 0px 0px 820px;
+                border: 5px solid whitesmoke;
+                border-radius: 20px;
+                height: 50%;
+                width: 175px;
+            }
+
+            #selection{
+                background-color: transparent;
+                text-align: center;              
+            }
+
+            h1{   
+                color:black;
+                font-family: Georgia;
+                font-size: 50px;
+                font-style: italic;
+                margin: 40px 0px 20px 250px;
+            }
+            
+            h2{
+                font-size: x-large;
+                font-family: Georgia;
+                font-style: italic;
+                margin: 25px 0px 0px 65px; 
+            }
+
+            #sel, #sel2{
+                color:yellowgreen;
+                margin: 5px;
+            }
+
+            input{
+                margin: 5px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <h1>  HumoRadio  </h1>
+        <h2> A music Recommender System based on user's mood </h2>
+
+        <div id='first'>
+            <br>
+            <div>Select your genre and your mood</div>
+            <br>
+            <div id='selection'>
+                <form method='POST' action='MainServlet' >
+                    Genre
+                    <br>
+                    <select name="genre">
+                        <option value="0">All</option>
+                        <option value="1">Rock</option>
+                        <option value="2">Pop</option>
+                        <option value="3">Blues</option>
+                        <option value="4">Classic</option>
+                        <option value="5">Hip-Hop</option>
+                    </select>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div> Sad - Happy <br>
+                        <input id="sad_happy_sel" type="range" step="1" name="sh" min="1" max="11" onchange="outputUpdate(value)">
+                        <br>
+                        <output for="sad_happy_sel" id="sel" ></output>
+
+                        <br> Relaxing - Exciting <br>            
+                        <input id="rel_exc_sel" type="range" step="1" name="re" min="1" max="11" onchange="outputUpdate2(value)">
+                        <br>
+                        <output for="rel_exc_sel" id="sel2"></output>
+                    </div>
+
+                    <input type='submit' value='Submit'>
+
+                    <script>
+                        function outputUpdate(vol) {
+                            if (vol == 6) {
+                                document.querySelector('#sel').value = "Indifferent";
+                            }
+                            if (vol > 6) {
+                                document.querySelector('#sel').value = "Happy " + (vol - 6);
+                            }
+                            if (vol < 6) {
+                                document.querySelector('#sel').value = "Sad " + (6 - vol);
+                            }
+                        }
+                    </script>
+
+                    <script>
+                        function outputUpdate2(vol) {
+                            if (vol == 6) {
+                                document.querySelector('#sel2').value = "Indifferent";
+                            }
+                            if (vol > 6) {
+                                document.querySelector('#sel2').value = "Exciting " + (vol - 6);
+                            }
+                            if (vol < 6) {
+                                document.querySelector('#sel2').value = "Relaxing " + (6 - vol);
+                            }
+                        }
+                    </script>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

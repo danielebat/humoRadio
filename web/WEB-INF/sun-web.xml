@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glassfish-web-app error-url="">
+  <servlet>
+    <servlet-name>MainServlet</servlet-name>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletDB</servlet-name>
+  </servlet>
+  <servlet>
+    <servlet-name>servDB</servlet-name>
+  </servlet>
+  <resource-ref>
+    <res-ref-name>HumoRadioDB</res-ref-name>
+    <jndi-name>HumoRadioDB</jndi-name>
+  </resource-ref>
+  <class-loader delegate="true"/>
+  <jsp-config>
+    <property name="keepgenerated" value="true">
+      <description>Keep a copy of the generated servlet class' java code.</description>
+    </property>
+  </jsp-config>
+  <webservice-description>
+    <webservice-description-name>MEXEndpointService</webservice-description-name>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>RegistrationService_V10</webservice-description-name>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>RegistrationService_V11</webservice-description-name>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>ServiceChannelWSImplService</webservice-description-name>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>WSAT10Service</webservice-description-name>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>WSAT11Service</webservice-description-name>
+  </webservice-description>
+</glassfish-web-app>
