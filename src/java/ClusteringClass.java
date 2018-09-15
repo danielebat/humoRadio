@@ -74,48 +74,13 @@ public class ClusteringClass {
             }
 
             while (rs.next()) {
-                fw.append(rs.getString(1));
-                fw.append(',');
-                fw.append(rs.getString(3));
-                fw.append(',');
-                fw.append(rs.getString(4));
-                fw.append(',');
-                fw.append(rs.getString(5));
-                fw.append(',');
-                fw.append(rs.getString(6));
-                fw.append(',');
-                fw.append(rs.getString(7));
-                fw.append(',');
-                fw.append(rs.getString(8));
-                fw.append(',');
-                fw.append(rs.getString(9));
-                fw.append(',');
-                fw.append(rs.getString(10));
-                fw.append(',');
-                fw.append(rs.getString(11));
-                fw.append(',');
-                fw.append(rs.getString(12));
-                fw.append(',');
-                fw.append(rs.getString(13));
-                fw.append(',');
-                fw.append(rs.getString(14));
-                fw.append(',');
-                fw.append(rs.getString(15));
-                fw.append(',');
-                fw.append(rs.getString(16));
-                fw.append(',');
-                fw.append(rs.getString(17));
-                fw.append(',');
-                fw.append(rs.getString(18));
-                fw.append(',');
-                fw.append(rs.getString(19));
-                fw.append(',');
-                fw.append(rs.getString(20));
-                fw.append(',');
-                fw.append(rs.getString(21));
-                fw.append(',');
-                fw.append(rs.getString(22));
-                fw.append('\n');
+                for (int i = 1; i < 23; i++) {
+                    if(i == 22)
+                        fw.append('\n');
+                    else if(i != 2) {
+                        fw.append(',');
+                    }
+                }
             }
 
             fw.flush();
